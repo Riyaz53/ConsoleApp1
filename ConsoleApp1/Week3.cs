@@ -126,3 +126,131 @@ namespace ConsoleApp1
 }
 
 
+//task5
+
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        // -------------------------------
+        // Task 1: Sum from 1 to N (for loop)
+        // -------------------------------
+
+        Console.Write("Enter a number N: ");
+        int N = int.Parse(Console.ReadLine());
+
+        int sum = 0;
+
+        for (int i = 1; i <= N; i++)
+        {
+            sum += i;
+        }
+
+        Console.WriteLine("Sum from 1 to " + N + " = " + sum);
+
+
+        // -------------------------------
+        // Task 2: Print numbers 1–20 (while loop)
+        // Skip multiples of 4 (continue)
+        // Stop when number is 15 (break)
+        // -------------------------------
+
+        Console.WriteLine("\nPrinting numbers 1 to 20 (skip multiples of 4, stop at 15):");
+
+        int num = 1;
+
+        while (num <= 20)
+        {
+            if (num == 15)
+            {
+                break;   // stop loop
+            }
+
+            if (num % 4 == 0)
+            {
+                num++;
+                continue; // skip multiples of 4
+            }
+
+            Console.WriteLine(num);
+            num++;
+        }
+
+
+        // -------------------------------
+        // Task 3: Sum of array elements using foreach
+        // -------------------------------
+
+        int[] numbers = { 5, 10, 15, 20, 25 };
+        int arraySum = 0;
+
+        foreach (int value in numbers)
+        {
+            arraySum += value;
+        }
+
+        Console.WriteLine("\nSum of array elements = " + arraySum);
+
+
+        // Prevent console from closing automatically
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
+
+//task6
+
+
+class Programm
+{
+    static void Main(string[] args)
+    {
+        // -------------------------------------
+        // Task 1: Convert user input to integer
+        // -------------------------------------
+
+        Console.Write("Enter a number: ");
+
+        try
+        {
+            int number = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("You entered: " + number);
+        }
+        catch (FormatException)
+        {
+            Console.WriteLine("Invalid number format");
+        }
+        finally
+        {
+            Console.WriteLine("Program Executed");
+        }
+
+
+        // -------------------------------------
+        // Task 2: Password validation
+        // -------------------------------------
+
+        Console.Write("\nEnter a password: ");
+        string password = Console.ReadLine();
+
+        try
+        {
+            if (password.Length < 6)
+            {
+                throw new Exception("Password must be at least 6 characters.");
+            }
+
+            Console.WriteLine("Password satisfied the requirement");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
+
+
+        // Prevent console from closing immediately
+        Console.WriteLine("\nPress any key to exit...");
+        Console.ReadKey();
+    }
+}
